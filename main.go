@@ -10,6 +10,7 @@ import (
 	"syscall"
 	"time"
 
+	"botto-tournaments/config"
 	"botto-tournaments/handlers"
 
 	"github.com/Necroforger/dgrouter/exmiddleware"
@@ -48,7 +49,7 @@ func main() {
 
 		// Set cooldown
 		r.Use(
-			exmiddleware.UserCooldown(time.Second*10, exmiddleware.CatchReply("This command is on cooldown...")),
+			exmiddleware.UserCooldown(time.Second*config.CommandCooldown, exmiddleware.CatchReply("This command is on cooldown...")),
 			modCheck,
 		)
 
