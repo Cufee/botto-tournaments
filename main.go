@@ -53,8 +53,7 @@ func main() {
 		)
 
 		// Commands
-		r.On("tourneys", (handlers.TournamentsAll)).Desc("Get a list of active tournaments on a server.")
-		r.On("team", (handlers.TournamentsAll)).Desc("Get a list of players in a team")
+		r.On("tourneys", (handlers.TournamentsAll)).Desc("Get a list of all tournaments on a server.")
 
 		// Help command
 		r.Default = r.On("help", func(ctx *exrouter.Context) {
